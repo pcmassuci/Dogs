@@ -9,14 +9,18 @@
 /* Begin PBXBuildFile section */
 		0C0A7DE427C8353400105945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0A7DE327C8353400105945 /* AppDelegate.swift */; };
 		0C0A7DE627C8353400105945 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0A7DE527C8353400105945 /* SceneDelegate.swift */; };
-		0C0A7DE827C8353400105945 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0A7DE727C8353400105945 /* ViewController.swift */; };
-		0C0A7DEB27C8353400105945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C0A7DE927C8353400105945 /* Main.storyboard */; };
 		0C0A7DEE27C8353400105945 /* Dogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C0A7DEC27C8353400105945 /* Dogs.xcdatamodeld */; };
 		0C0A7DF027C8353600105945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C0A7DEF27C8353600105945 /* Assets.xcassets */; };
 		0C0A7DF327C8353600105945 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C0A7DF127C8353600105945 /* LaunchScreen.storyboard */; };
 		0C0A7DFE27C8353600105945 /* DogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0A7DFD27C8353600105945 /* DogsTests.swift */; };
 		0C0A7E0827C8353600105945 /* DogsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0A7E0727C8353600105945 /* DogsUITests.swift */; };
 		0C0A7E0A27C8353600105945 /* DogsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0A7E0927C8353600105945 /* DogsUITestsLaunchTests.swift */; };
+		0C8AE19527C869DA0007757E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8AE19427C869DA0007757E /* ListViewController.swift */; };
+		0C8AE19827C86A4D0007757E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8AE19727C86A4D0007757E /* SearchViewController.swift */; };
+		0CAEFE2A27C88673004187AF /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE2927C88673004187AF /* CoordinatorProtocol.swift */; };
+		0CAEFE3127CA59BB004187AF /* TabCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE3027CA59BB004187AF /* TabCoordinatorProtocol.swift */; };
+		0CAEFE3327CA5A06004187AF /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE3227CA5A06004187AF /* TabBarPage.swift */; };
+		0CAEFE3527CA5B3E004187AF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE3427CA5B3E004187AF /* AppCoordinator.swift */; };
 		29B11309A1F32016EA6EA78F /* Pods_DogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E2E20C93FA62D4705235C6 /* Pods_DogsTests.framework */; };
 		657E3318C69913E6FFD62412 /* Pods_Dogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D106594A0A2BC0C8B58842 /* Pods_Dogs.framework */; };
 		917B9D08E1C3682BABC3FEAB /* Pods_Dogs_DogsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9C53AA9F7A20536057F5C5 /* Pods_Dogs_DogsUITests.framework */; };
@@ -43,8 +47,6 @@
 		0C0A7DE027C8353400105945 /* Dogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0A7DE327C8353400105945 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C0A7DE527C8353400105945 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C0A7DE727C8353400105945 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0C0A7DEA27C8353400105945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C0A7DED27C8353400105945 /* Dogs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dogs.xcdatamodel; sourceTree = "<group>"; };
 		0C0A7DEF27C8353600105945 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C0A7DF227C8353600105945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +56,12 @@
 		0C0A7E0327C8353600105945 /* DogsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0A7E0727C8353600105945 /* DogsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsUITests.swift; sourceTree = "<group>"; };
 		0C0A7E0927C8353600105945 /* DogsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0C8AE19427C869DA0007757E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		0C8AE19727C86A4D0007757E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0CAEFE2927C88673004187AF /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		0CAEFE3027CA59BB004187AF /* TabCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		0CAEFE3227CA5A06004187AF /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		0CAEFE3427CA5B3E004187AF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2563F2E028BFE95C7A02980F /* Pods-Dogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogs.release.xcconfig"; path = "Target Support Files/Pods-Dogs/Pods-Dogs.release.xcconfig"; sourceTree = "<group>"; };
 		33C308CBE41A83EA5374E74D /* Pods-DogsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsTests.release.xcconfig"; path = "Target Support Files/Pods-DogsTests/Pods-DogsTests.release.xcconfig"; sourceTree = "<group>"; };
 		33D106594A0A2BC0C8B58842 /* Pods_Dogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,13 +126,11 @@
 		0C0A7DE227C8353400105945 /* Dogs */ = {
 			isa = PBXGroup;
 			children = (
-				0C0A7DE327C8353400105945 /* AppDelegate.swift */,
-				0C0A7DE527C8353400105945 /* SceneDelegate.swift */,
-				0C0A7DE727C8353400105945 /* ViewController.swift */,
-				0C0A7DE927C8353400105945 /* Main.storyboard */,
-				0C0A7DEF27C8353600105945 /* Assets.xcassets */,
-				0C0A7DF127C8353600105945 /* LaunchScreen.storyboard */,
-				0C0A7DF427C8353600105945 /* Info.plist */,
+				0CAEFE3827CA7478004187AF /* Application */,
+				0CAEFE3727CA7449004187AF /* SupportingFiles */,
+				0CAEFE3627CA5E26004187AF /* Resources */,
+				0CAEFE2B27CA5795004187AF /* Commons */,
+				0C8AE18B27C83E710007757E /* TabBar */,
 				0C0A7DEC27C8353400105945 /* Dogs.xcdatamodeld */,
 			);
 			path = Dogs;
@@ -145,6 +151,76 @@
 				0C0A7E0927C8353600105945 /* DogsUITestsLaunchTests.swift */,
 			);
 			path = DogsUITests;
+			sourceTree = "<group>";
+		};
+		0C8AE18B27C83E710007757E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0CAEFE3027CA59BB004187AF /* TabCoordinatorProtocol.swift */,
+				0CAEFE3227CA5A06004187AF /* TabBarPage.swift */,
+				0C8AE18E27C847890007757E /* Scene */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0C8AE18E27C847890007757E /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				0C8AE19027C847CB0007757E /* List */,
+				0C8AE18F27C847AD0007757E /* Search */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		0C8AE18F27C847AD0007757E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0C8AE19727C86A4D0007757E /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0C8AE19027C847CB0007757E /* List */ = {
+			isa = PBXGroup;
+			children = (
+				0C8AE19427C869DA0007757E /* ListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		0CAEFE2B27CA5795004187AF /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				0CAEFE2927C88673004187AF /* CoordinatorProtocol.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		0CAEFE3627CA5E26004187AF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C0A7DEF27C8353600105945 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0CAEFE3727CA7449004187AF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0C0A7DF427C8353600105945 /* Info.plist */,
+				0C0A7DF127C8353600105945 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		0CAEFE3827CA7478004187AF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0C0A7DE327C8353400105945 /* AppDelegate.swift */,
+				0CAEFE3427CA5B3E004187AF /* AppCoordinator.swift */,
+				0C0A7DE527C8353400105945 /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		9478ABC102824DF2B7067D60 /* Pods */ = {
@@ -280,7 +356,6 @@
 			files = (
 				0C0A7DF327C8353600105945 /* LaunchScreen.storyboard in Resources */,
 				0C0A7DF027C8353600105945 /* Assets.xcassets in Resources */,
-				0C0A7DEB27C8353400105945 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,9 +467,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C0A7DE827C8353400105945 /* ViewController.swift in Sources */,
+				0CAEFE2A27C88673004187AF /* CoordinatorProtocol.swift in Sources */,
+				0C8AE19827C86A4D0007757E /* SearchViewController.swift in Sources */,
+				0CAEFE3527CA5B3E004187AF /* AppCoordinator.swift in Sources */,
 				0C0A7DE427C8353400105945 /* AppDelegate.swift in Sources */,
 				0C0A7DEE27C8353400105945 /* Dogs.xcdatamodeld in Sources */,
+				0CAEFE3127CA59BB004187AF /* TabCoordinatorProtocol.swift in Sources */,
+				0CAEFE3327CA5A06004187AF /* TabBarPage.swift in Sources */,
+				0C8AE19527C869DA0007757E /* ListViewController.swift in Sources */,
 				0C0A7DE627C8353400105945 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,14 +512,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0C0A7DE927C8353400105945 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C0A7DEA27C8353400105945 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0C0A7DF127C8353600105945 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -577,10 +649,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JFJZPS4348;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Dogs/Info.plist;
+				INFOPLIST_FILE = Dogs/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -607,10 +678,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JFJZPS4348;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Dogs/Info.plist;
+				INFOPLIST_FILE = Dogs/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
