@@ -26,6 +26,7 @@
 		0CAEFE4027CA85B8004187AF /* BreedsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE3F27CA85B8004187AF /* BreedsService.swift */; };
 		0CAEFE4327CA878E004187AF /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE4227CA878E004187AF /* ServiceError.swift */; };
 		0CAEFE4527CA9257004187AF /* DogsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE4427CA9257004187AF /* DogsListViewModel.swift */; };
+		0CAEFE4C27CAA670004187AF /* BreedsServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE4B27CAA670004187AF /* BreedsServiceTest.swift */; };
 		29B11309A1F32016EA6EA78F /* Pods_DogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E2E20C93FA62D4705235C6 /* Pods_DogsTests.framework */; };
 		657E3318C69913E6FFD62412 /* Pods_Dogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D106594A0A2BC0C8B58842 /* Pods_Dogs.framework */; };
 		917B9D08E1C3682BABC3FEAB /* Pods_Dogs_DogsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9C53AA9F7A20536057F5C5 /* Pods_Dogs_DogsUITests.framework */; };
@@ -72,6 +73,7 @@
 		0CAEFE3F27CA85B8004187AF /* BreedsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsService.swift; sourceTree = "<group>"; };
 		0CAEFE4227CA878E004187AF /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		0CAEFE4427CA9257004187AF /* DogsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListViewModel.swift; sourceTree = "<group>"; };
+		0CAEFE4B27CAA670004187AF /* BreedsServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsServiceTest.swift; sourceTree = "<group>"; };
 		2563F2E028BFE95C7A02980F /* Pods-Dogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogs.release.xcconfig"; path = "Target Support Files/Pods-Dogs/Pods-Dogs.release.xcconfig"; sourceTree = "<group>"; };
 		33C308CBE41A83EA5374E74D /* Pods-DogsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsTests.release.xcconfig"; path = "Target Support Files/Pods-DogsTests/Pods-DogsTests.release.xcconfig"; sourceTree = "<group>"; };
 		33D106594A0A2BC0C8B58842 /* Pods_Dogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +151,7 @@
 		0C0A7DFC27C8353600105945 /* DogsTests */ = {
 			isa = PBXGroup;
 			children = (
+				0CAEFE4827CAA611004187AF /* TabBar */,
 				0C0A7DFD27C8353600105945 /* DogsTests.swift */,
 			);
 			path = DogsTests;
@@ -260,6 +263,30 @@
 			children = (
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		0CAEFE4827CAA611004187AF /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0CAEFE4927CAA61C004187AF /* Scene */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0CAEFE4927CAA61C004187AF /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				0CAEFE4A27CAA628004187AF /* List */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		0CAEFE4A27CAA628004187AF /* List */ = {
+			isa = PBXGroup;
+			children = (
+				0CAEFE4B27CAA670004187AF /* BreedsServiceTest.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		9478ABC102824DF2B7067D60 /* Pods */ = {
@@ -527,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CAEFE4C27CAA670004187AF /* BreedsServiceTest.swift in Sources */,
 				0C0A7DFE27C8353600105945 /* DogsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
