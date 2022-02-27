@@ -10,6 +10,7 @@ import Foundation
 struct Endpoint {
 	enum Path: String {
 		case breeds = "/v1/breeds"
+		case searchBreeds = "/v1/breeds/search"
 	}
 	
 	let path: String
@@ -19,7 +20,6 @@ struct Endpoint {
 		self.path = path.rawValue
 		queryItems = queryItemsEncodable.queryParams ?? []
 	}
-	
 }
 
 extension Endpoint {

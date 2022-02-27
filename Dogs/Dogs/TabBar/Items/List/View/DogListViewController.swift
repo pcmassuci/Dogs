@@ -64,7 +64,8 @@ extension DogListViewController: UICollectionViewDataSource {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-		if (viewModel?.hasNextPage ?? false) , indexPath.item == (dataSource.count - 1) {
+		if (viewModel?.hasNextPage ?? false),
+			indexPath.item == (dataSource.count - 1) {
 			viewModel?.getNextPage()
 		}
 	}

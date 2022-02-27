@@ -13,13 +13,18 @@ protocol DogsServiceProtocol {
 	func breedsRequest(requestHeader: PaginationRequestQuery, completion: @escaping DogsListPaginationCompletion)
 }
 
-final class DogsService: DogsServiceProtocol {
-	private let session: URLSession
-	
-	init(session: URLSession = URLSession.shared) {
-		self.session = session
-	}
+final class DogsService: BaseService {
+	private func getNumberOfItems(response: URLResponse?) -> Int? {
+		if let httpResponse = response as? HTTPURLResponse,
+		   let pagination = httpResponse.value(forHTTPHeaderField: "Pagination-Count") {
+			return Int(pagination)
+		}
 		
+		return nil
+	}
+}
+
+extension DogsService: DogsServiceProtocol {
 	func breedsRequest(requestHeader: PaginationRequestQuery, completion: @escaping DogsListPaginationCompletion) {
 		let endpoint = Endpoint(path: .breeds,
 								queryItemsEncodable: requestHeader)
@@ -43,7 +48,7 @@ final class DogsService: DogsServiceProtocol {
 			}
 			
 			let numberOFItens = self.getNumberOfItems(response: response)
-	
+			
 			do {
 				let decoder = JSONDecoder()
 				let decoded = try decoder.decode([DogItemResponse].self, from: jsonData)
@@ -56,14 +61,5 @@ final class DogsService: DogsServiceProtocol {
 		}
 		
 		task.resume()
-	}
-		
-	func getNumberOfItems(response: URLResponse?) -> Int? {
-		if let httpResponse = response as? HTTPURLResponse,
-		   let pagination = httpResponse.value(forHTTPHeaderField: "Pagination-Count") {
-			return Int(pagination)
-		}
-		
-		return nil
 	}
 }

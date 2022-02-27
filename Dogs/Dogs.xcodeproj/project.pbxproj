@@ -40,6 +40,13 @@
 		0CC2B9D827CBB3570046BD97 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9D727CBB3570046BD97 /* UITableViewCellExtension.swift */; };
 		0CC2B9DA27CBCB960046BD97 /* PaginationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9D927CBCB960046BD97 /* PaginationItem.swift */; };
 		0CC2B9DC27CBCC110046BD97 /* PaginationRequestQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9DB27CBCC110046BD97 /* PaginationRequestQuery.swift */; };
+		0CC2B9DE27CBF7700046BD97 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9DD27CBF7700046BD97 /* SearchCoordinator.swift */; };
+		0CC2B9E027CBF77D0046BD97 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9DF27CBF77C0046BD97 /* SearchViewModel.swift */; };
+		0CC2B9E227CBF8B60046BD97 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9E127CBF8B60046BD97 /* SearchView.swift */; };
+		0CC2B9E427CC00C60046BD97 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9E327CC00C60046BD97 /* SearchViewCell.swift */; };
+		0CC2B9E627CC02310046BD97 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9E527CC02310046BD97 /* BaseService.swift */; };
+		0CC2B9E827CC04740046BD97 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9E727CC04740046BD97 /* SearchService.swift */; };
+		0CC2B9EA27CC07560046BD97 /* SearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9E927CC07560046BD97 /* SearchQuery.swift */; };
 		29B11309A1F32016EA6EA78F /* Pods_DogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E2E20C93FA62D4705235C6 /* Pods_DogsTests.framework */; };
 		657E3318C69913E6FFD62412 /* Pods_Dogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D106594A0A2BC0C8B58842 /* Pods_Dogs.framework */; };
 		917B9D08E1C3682BABC3FEAB /* Pods_Dogs_DogsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9C53AA9F7A20536057F5C5 /* Pods_Dogs_DogsUITests.framework */; };
@@ -100,6 +107,13 @@
 		0CC2B9D727CBB3570046BD97 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		0CC2B9D927CBCB960046BD97 /* PaginationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationItem.swift; sourceTree = "<group>"; };
 		0CC2B9DB27CBCC110046BD97 /* PaginationRequestQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationRequestQuery.swift; sourceTree = "<group>"; };
+		0CC2B9DD27CBF7700046BD97 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		0CC2B9DF27CBF77C0046BD97 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		0CC2B9E127CBF8B60046BD97 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		0CC2B9E327CC00C60046BD97 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
+		0CC2B9E527CC02310046BD97 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		0CC2B9E727CC04740046BD97 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		0CC2B9E927CC07560046BD97 /* SearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuery.swift; sourceTree = "<group>"; };
 		2563F2E028BFE95C7A02980F /* Pods-Dogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogs.release.xcconfig"; path = "Target Support Files/Pods-Dogs/Pods-Dogs.release.xcconfig"; sourceTree = "<group>"; };
 		33C308CBE41A83EA5374E74D /* Pods-DogsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsTests.release.xcconfig"; path = "Target Support Files/Pods-DogsTests/Pods-DogsTests.release.xcconfig"; sourceTree = "<group>"; };
 		33D106594A0A2BC0C8B58842 /* Pods_Dogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,24 +211,27 @@
 			children = (
 				0CAEFE3027CA59BB004187AF /* TabCoordinatorProtocol.swift */,
 				0CAEFE3227CA5A06004187AF /* TabBarPage.swift */,
-				0C8AE18E27C847890007757E /* Scene */,
+				0C8AE18E27C847890007757E /* Items */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		0C8AE18E27C847890007757E /* Scene */ = {
+		0C8AE18E27C847890007757E /* Items */ = {
 			isa = PBXGroup;
 			children = (
 				0C8AE19027C847CB0007757E /* List */,
 				0C8AE18F27C847AD0007757E /* Search */,
 			);
-			path = Scene;
+			path = Items;
 			sourceTree = "<group>";
 		};
 		0C8AE18F27C847AD0007757E /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				0C8AE19727C86A4D0007757E /* SearchViewController.swift */,
+				0CC2B9EC27CC13260046BD97 /* Service */,
+				0CC2B9EB27CC0B2D0046BD97 /* View */,
+				0CC2B9DD27CBF7700046BD97 /* SearchCoordinator.swift */,
+				0CC2B9DF27CBF77C0046BD97 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -222,6 +239,7 @@
 		0C8AE19027C847CB0007757E /* List */ = {
 			isa = PBXGroup;
 			children = (
+				0CC2B9ED27CC208B0046BD97 /* Service */,
 				0CAEFE6327CB1834004187AF /* DogsListCoodinator.swift */,
 				0CAEFE4427CA9257004187AF /* DogsListViewModel.swift */,
 				0CAEFE4627CAA06B004187AF /* View */,
@@ -272,11 +290,9 @@
 		0CAEFE3A27CA7F62004187AF /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				0CC2B9D927CBCB960046BD97 /* PaginationItem.swift */,
 				0CAEFE3B27CA829E004187AF /* DogItemResponse.swift */,
-				0CAEFE3F27CA85B8004187AF /* DogsService.swift */,
 				0CC2B9CE27CBAB3F0046BD97 /* Endpoint.swift */,
-				0CC2B9DB27CBCC110046BD97 /* PaginationRequestQuery.swift */,
+				0CC2B9E527CC02310046BD97 /* BaseService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -342,6 +358,35 @@
 				0CC2B9D127CBAFAF0046BD97 /* EncodableExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0CC2B9EB27CC0B2D0046BD97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CC2B9E327CC00C60046BD97 /* SearchViewCell.swift */,
+				0CC2B9E127CBF8B60046BD97 /* SearchView.swift */,
+				0C8AE19727C86A4D0007757E /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0CC2B9EC27CC13260046BD97 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0CC2B9E927CC07560046BD97 /* SearchQuery.swift */,
+				0CC2B9E727CC04740046BD97 /* SearchService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0CC2B9ED27CC208B0046BD97 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0CAEFE3F27CA85B8004187AF /* DogsService.swift */,
+				0CC2B9DB27CBCC110046BD97 /* PaginationRequestQuery.swift */,
+				0CC2B9D927CBCB960046BD97 /* PaginationItem.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		9478ABC102824DF2B7067D60 /* Pods */ = {
@@ -627,13 +672,16 @@
 				0CAEFE2A27C88673004187AF /* CoordinatorProtocol.swift in Sources */,
 				0CC2B9DA27CBCB960046BD97 /* PaginationItem.swift in Sources */,
 				0CC2B9D427CBB2F70046BD97 /* NSObjectExtension.swift in Sources */,
+				0CC2B9E827CC04740046BD97 /* SearchService.swift in Sources */,
 				0CC2B9DC27CBCC110046BD97 /* PaginationRequestQuery.swift in Sources */,
+				0CC2B9E427CC00C60046BD97 /* SearchViewCell.swift in Sources */,
 				0CAEFE3C27CA829E004187AF /* DogItemResponse.swift in Sources */,
 				0CAEFE4527CA9257004187AF /* DogsListViewModel.swift in Sources */,
 				0C8AE19827C86A4D0007757E /* SearchViewController.swift in Sources */,
 				0CAEFE3527CA5B3E004187AF /* AppCoordinator.swift in Sources */,
 				0C0A7DE427C8353400105945 /* AppDelegate.swift in Sources */,
 				0CAEFE5827CAAD72004187AF /* UIViewExtension.swift in Sources */,
+				0CC2B9E227CBF8B60046BD97 /* SearchView.swift in Sources */,
 				0C0A7DEE27C8353400105945 /* Dogs.xcdatamodeld in Sources */,
 				0CAEFE6127CB0E86004187AF /* DogListView.swift in Sources */,
 				0CC2B9D827CBB3570046BD97 /* UITableViewCellExtension.swift in Sources */,
@@ -642,8 +690,12 @@
 				0CC2B9D227CBAFAF0046BD97 /* EncodableExtension.swift in Sources */,
 				0CAEFE5427CAAA3E004187AF /* ViewCodeConfiguration.swift in Sources */,
 				0CAEFE5E27CAEFED004187AF /* LayoutAndFilterView.swift in Sources */,
+				0CC2B9E027CBF77D0046BD97 /* SearchViewModel.swift in Sources */,
+				0CC2B9EA27CC07560046BD97 /* SearchQuery.swift in Sources */,
 				0CAEFE5A27CAAFCE004187AF /* DogCollectionViewCell.swift in Sources */,
 				0CAEFE4027CA85B8004187AF /* DogsService.swift in Sources */,
+				0CC2B9DE27CBF7700046BD97 /* SearchCoordinator.swift in Sources */,
+				0CC2B9E627CC02310046BD97 /* BaseService.swift in Sources */,
 				0CC2B9CF27CBAB3F0046BD97 /* Endpoint.swift in Sources */,
 				0CAEFE6427CB1834004187AF /* DogsListCoodinator.swift in Sources */,
 				0CAEFE5C27CAB9BA004187AF /* ListOrGridCollectionViewFlowLayout.swift in Sources */,
