@@ -68,9 +68,9 @@ class TabCoordinator: NSObject, Coordinator {
 
         switch page {
         case .dogs:
-            let dogsViewController = DogListViewController()
-            navController.pushViewController(dogsViewController,
-                                             animated: true)
+			let dogsCoordinator = DogsListCoodinator(navController)
+			dogsCoordinator.start()
+			childCoordinators.append(dogsCoordinator)
         case .search:
             let searchViewController = SearchViewController()
             navController.pushViewController(searchViewController,

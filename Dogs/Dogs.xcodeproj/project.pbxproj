@@ -27,6 +27,19 @@
 		0CAEFE4327CA878E004187AF /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE4227CA878E004187AF /* ServiceError.swift */; };
 		0CAEFE4527CA9257004187AF /* DogsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE4427CA9257004187AF /* DogsListViewModel.swift */; };
 		0CAEFE4C27CAA670004187AF /* BreedsServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE4B27CAA670004187AF /* BreedsServiceTest.swift */; };
+		0CAEFE5427CAAA3E004187AF /* ViewCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE5327CAAA3D004187AF /* ViewCodeConfiguration.swift */; };
+		0CAEFE5827CAAD72004187AF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE5727CAAD71004187AF /* UIViewExtension.swift */; };
+		0CAEFE5A27CAAFCE004187AF /* DogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE5927CAAFCE004187AF /* DogCollectionViewCell.swift */; };
+		0CAEFE5C27CAB9BA004187AF /* ListOrGridCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE5B27CAB9BA004187AF /* ListOrGridCollectionViewFlowLayout.swift */; };
+		0CAEFE5E27CAEFED004187AF /* LayoutAndFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE5D27CAEFED004187AF /* LayoutAndFilterView.swift */; };
+		0CAEFE6127CB0E86004187AF /* DogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE6027CB0E86004187AF /* DogListView.swift */; };
+		0CAEFE6427CB1834004187AF /* DogsListCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAEFE6327CB1834004187AF /* DogsListCoodinator.swift */; };
+		0CC2B9CD27CBA7190046BD97 /* BreedsResponseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9CC27CBA7180046BD97 /* BreedsResponseItem.swift */; };
+		0CC2B9CF27CBAB3F0046BD97 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9CE27CBAB3F0046BD97 /* Endpoint.swift */; };
+		0CC2B9D227CBAFAF0046BD97 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9D127CBAFAF0046BD97 /* EncodableExtension.swift */; };
+		0CC2B9D427CBB2F70046BD97 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9D327CBB2F70046BD97 /* NSObjectExtension.swift */; };
+		0CC2B9D627CBB3180046BD97 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9D527CBB3180046BD97 /* UICollectionViewCellExtension.swift */; };
+		0CC2B9D827CBB3570046BD97 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2B9D727CBB3570046BD97 /* UITableViewCellExtension.swift */; };
 		29B11309A1F32016EA6EA78F /* Pods_DogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E2E20C93FA62D4705235C6 /* Pods_DogsTests.framework */; };
 		657E3318C69913E6FFD62412 /* Pods_Dogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D106594A0A2BC0C8B58842 /* Pods_Dogs.framework */; };
 		917B9D08E1C3682BABC3FEAB /* Pods_Dogs_DogsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9C53AA9F7A20536057F5C5 /* Pods_Dogs_DogsUITests.framework */; };
@@ -74,6 +87,19 @@
 		0CAEFE4227CA878E004187AF /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		0CAEFE4427CA9257004187AF /* DogsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListViewModel.swift; sourceTree = "<group>"; };
 		0CAEFE4B27CAA670004187AF /* BreedsServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsServiceTest.swift; sourceTree = "<group>"; };
+		0CAEFE5327CAAA3D004187AF /* ViewCodeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeConfiguration.swift; sourceTree = "<group>"; };
+		0CAEFE5727CAAD71004187AF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		0CAEFE5927CAAFCE004187AF /* DogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCollectionViewCell.swift; sourceTree = "<group>"; };
+		0CAEFE5B27CAB9BA004187AF /* ListOrGridCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrGridCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		0CAEFE5D27CAEFED004187AF /* LayoutAndFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAndFilterView.swift; sourceTree = "<group>"; };
+		0CAEFE6027CB0E86004187AF /* DogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListView.swift; sourceTree = "<group>"; };
+		0CAEFE6327CB1834004187AF /* DogsListCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListCoodinator.swift; sourceTree = "<group>"; };
+		0CC2B9CC27CBA7180046BD97 /* BreedsResponseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsResponseItem.swift; sourceTree = "<group>"; };
+		0CC2B9CE27CBAB3F0046BD97 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		0CC2B9D127CBAFAF0046BD97 /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
+		0CC2B9D327CBB2F70046BD97 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		0CC2B9D527CBB3180046BD97 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
+		0CC2B9D727CBB3570046BD97 /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		2563F2E028BFE95C7A02980F /* Pods-Dogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogs.release.xcconfig"; path = "Target Support Files/Pods-Dogs/Pods-Dogs.release.xcconfig"; sourceTree = "<group>"; };
 		33C308CBE41A83EA5374E74D /* Pods-DogsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogsTests.release.xcconfig"; path = "Target Support Files/Pods-DogsTests/Pods-DogsTests.release.xcconfig"; sourceTree = "<group>"; };
 		33D106594A0A2BC0C8B58842 /* Pods_Dogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,9 +222,8 @@
 		0C8AE19027C847CB0007757E /* List */ = {
 			isa = PBXGroup;
 			children = (
+				0CAEFE6327CB1834004187AF /* DogsListCoodinator.swift */,
 				0CAEFE4627CAA06B004187AF /* View */,
-				0CAEFE3A27CA7F62004187AF /* Service */,
-				0C8AE19427C869DA0007757E /* DogListViewController.swift */,
 				0CAEFE4427CA9257004187AF /* DogsListViewModel.swift */,
 			);
 			path = List;
@@ -207,9 +232,13 @@
 		0CAEFE2B27CA5795004187AF /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				0CC2B9D027CBAF8F0046BD97 /* Extensions */,
+				0CAEFE3A27CA7F62004187AF /* Service */,
+				0CAEFE5F27CB01C5004187AF /* Components */,
 				0CAEFE2927C88673004187AF /* CoordinatorProtocol.swift */,
 				0CAEFE3D27CA8391004187AF /* BaseUrl.swift */,
 				0CAEFE4227CA878E004187AF /* ServiceError.swift */,
+				0CAEFE5327CAAA3D004187AF /* ViewCodeConfiguration.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -245,7 +274,9 @@
 			isa = PBXGroup;
 			children = (
 				0CAEFE3B27CA829E004187AF /* AnimalItemResponse.swift */,
+				0CC2B9CC27CBA7180046BD97 /* BreedsResponseItem.swift */,
 				0CAEFE3F27CA85B8004187AF /* BreedsService.swift */,
+				0CC2B9CE27CBAB3F0046BD97 /* Endpoint.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -254,6 +285,9 @@
 			isa = PBXGroup;
 			children = (
 				0CAEFE4727CAA409004187AF /* Cells */,
+				0CAEFE6027CB0E86004187AF /* DogListView.swift */,
+				0C8AE19427C869DA0007757E /* DogListViewController.swift */,
+				0CAEFE5B27CAB9BA004187AF /* ListOrGridCollectionViewFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,6 +295,7 @@
 		0CAEFE4727CAA409004187AF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				0CAEFE5927CAAFCE004187AF /* DogCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -287,6 +322,26 @@
 				0CAEFE4B27CAA670004187AF /* BreedsServiceTest.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		0CAEFE5F27CB01C5004187AF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0CAEFE5D27CAEFED004187AF /* LayoutAndFilterView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0CC2B9D027CBAF8F0046BD97 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0CC2B9D327CBB2F70046BD97 /* NSObjectExtension.swift */,
+				0CC2B9D527CBB3180046BD97 /* UICollectionViewCellExtension.swift */,
+				0CC2B9D727CBB3570046BD97 /* UITableViewCellExtension.swift */,
+				0CAEFE5727CAAD71004187AF /* UIViewExtension.swift */,
+				0CC2B9D127CBAFAF0046BD97 /* EncodableExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9478ABC102824DF2B7067D60 /* Pods */ = {
@@ -458,7 +513,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		25990DEE2EC55F0426CBFB8B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -534,16 +589,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CAEFE2A27C88673004187AF /* CoordinatorProtocol.swift in Sources */,
+				0CC2B9D427CBB2F70046BD97 /* NSObjectExtension.swift in Sources */,
 				0CAEFE3E27CA8391004187AF /* BaseUrl.swift in Sources */,
 				0CAEFE3C27CA829E004187AF /* AnimalItemResponse.swift in Sources */,
 				0CAEFE4527CA9257004187AF /* DogsListViewModel.swift in Sources */,
 				0C8AE19827C86A4D0007757E /* SearchViewController.swift in Sources */,
 				0CAEFE3527CA5B3E004187AF /* AppCoordinator.swift in Sources */,
+				0CC2B9CD27CBA7190046BD97 /* BreedsResponseItem.swift in Sources */,
 				0C0A7DE427C8353400105945 /* AppDelegate.swift in Sources */,
+				0CAEFE5827CAAD72004187AF /* UIViewExtension.swift in Sources */,
 				0C0A7DEE27C8353400105945 /* Dogs.xcdatamodeld in Sources */,
+				0CAEFE6127CB0E86004187AF /* DogListView.swift in Sources */,
+				0CC2B9D827CBB3570046BD97 /* UITableViewCellExtension.swift in Sources */,
 				0CAEFE3127CA59BB004187AF /* TabCoordinatorProtocol.swift in Sources */,
 				0CAEFE4327CA878E004187AF /* ServiceError.swift in Sources */,
+				0CC2B9D227CBAFAF0046BD97 /* EncodableExtension.swift in Sources */,
+				0CAEFE5427CAAA3E004187AF /* ViewCodeConfiguration.swift in Sources */,
+				0CAEFE5E27CAEFED004187AF /* LayoutAndFilterView.swift in Sources */,
+				0CAEFE5A27CAAFCE004187AF /* DogCollectionViewCell.swift in Sources */,
 				0CAEFE4027CA85B8004187AF /* BreedsService.swift in Sources */,
+				0CC2B9CF27CBAB3F0046BD97 /* Endpoint.swift in Sources */,
+				0CAEFE6427CB1834004187AF /* DogsListCoodinator.swift in Sources */,
+				0CAEFE5C27CAB9BA004187AF /* ListOrGridCollectionViewFlowLayout.swift in Sources */,
+				0CC2B9D627CBB3180046BD97 /* UICollectionViewCellExtension.swift in Sources */,
 				0CAEFE3327CA5A06004187AF /* TabBarPage.swift in Sources */,
 				0C8AE19527C869DA0007757E /* DogListViewController.swift in Sources */,
 				0C0A7DE627C8353400105945 /* SceneDelegate.swift in Sources */,

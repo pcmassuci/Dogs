@@ -7,6 +7,7 @@
 
 import Foundation
 
-enum BaseUrl: String {
-	case breeds = "https://api.thedogapi.com/v1/breeds"
+enum BaseUrl {
+	static let breeds = "https://api.thedogapi.com/v1/breeds"
+	static let breedsPagination = "https://api.thedogapi.com/v1/images/search?limit=%@&page=%@&order=%@"
 }

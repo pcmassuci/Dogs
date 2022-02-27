@@ -46,6 +46,8 @@ extension AppCoordinator: CoordinatorFinishDelegate {
 		switch childCoordinator.type {
 		case .tab:
 			navigationController.viewControllers.removeAll()
+		case .list:
+			()
 		}
 	}
 }
