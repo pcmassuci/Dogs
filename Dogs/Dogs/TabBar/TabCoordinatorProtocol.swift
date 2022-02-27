@@ -50,7 +50,6 @@ class TabCoordinator: NSObject, Coordinator {
     }
 
     private func prepareTabBarController(withTabControllers tabControllers: [UIViewController]) {
-        tabBarController.delegate = self
         tabBarController.setViewControllers(tabControllers,
                                             animated: true)
 
@@ -68,9 +67,9 @@ class TabCoordinator: NSObject, Coordinator {
 
         switch page {
         case .dogs:
-            let dogsViewController = ListViewController()
-            navController.pushViewController(dogsViewController,
-                                             animated: true)
+			let dogsCoordinator = DogsListCoodinator(navController)
+			dogsCoordinator.start()
+			childCoordinators.append(dogsCoordinator)
         case .search:
             let searchViewController = SearchViewController()
             navController.pushViewController(searchViewController,
@@ -89,13 +88,5 @@ class TabCoordinator: NSObject, Coordinator {
         guard let page = TabBarPage(rawValue: index) else { return }
 
         tabBarController.selectedIndex = page.pageOrderNumber()
-    }
-}
-
-// MARK: - UITabBarControllerDelegate
-extension TabCoordinator: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController,
-                          didSelect viewController: UIViewController) {
-        // Some implementation
     }
 }
