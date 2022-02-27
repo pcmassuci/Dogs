@@ -71,10 +71,11 @@ class TabCoordinator: NSObject, Coordinator {
 			dogsCoordinator.start()
 			childCoordinators.append(dogsCoordinator)
         case .search:
-            let searchViewController = SearchViewController()
-            navController.pushViewController(searchViewController,
-                                             animated: true)
+			let searchCordinator = SearchCoordinator(navController)
+			searchCordinator.start()
+			childCoordinators.append(searchCordinator)
         }
+		
         return navController
     }
 
