@@ -8,9 +8,9 @@
 import Foundation
 
 protocol DogsListViewModelProtocol {
+	var hasNextPage: Bool { get }
 	func getNextPage()
 	func getListByOrder(isAscending: Bool)
-	func getList()
 }
 
 protocol DogsListViewModelDelegate: AnyObject {
@@ -18,36 +18,36 @@ protocol DogsListViewModelDelegate: AnyObject {
 }
 
 final class DogsListViewModel: DogsListViewModelProtocol {
-	
-	private let service: BreedsServiceProtocol
+	private let numberOfItemsPerRequest = 20
+	private let service: DogsServiceProtocol
+	private var isAscending = true
 	private weak var delegate: DogsListViewModelDelegate?
+	var currentPage = 0
+	var numberOFItems: Int?
+	var hasNextPage = true
+	private var dogs: [DogItemResponse] = []
 	
-	init(service: BreedsServiceProtocol = BreedsService(), delegate: DogsListViewModelDelegate) {
+	init(service: DogsServiceProtocol = DogsService(), delegate: DogsListViewModelDelegate) {
 		self.service = service
 		self.delegate = delegate
 	}
 	
-	func getList() {
-		service.getBreedsList { [weak self] result in
-			guard let self = self else { return }
-			switch result {
-			case .success(let listOfDogs):
-				self.displayScreen(with: listOfDogs)
-			case .failure:
-				()
-			}
-		}
-	}
-	
 	func getNextPage() {
-		let request = PaginationRequestQuery(limit: 10,
-											 page: 1,
-											 order: "Desc")
+		let request = PaginationRequestQuery(limit: numberOfItemsPerRequest,
+											 page: currentPage,
+											 isAscending: isAscending)
+		
+		let numberOFPages = (numberOFItems ?? .zero) / numberOfItemsPerRequest
+		
+		if numberOFItems != nil, currentPage > numberOFPages {
+			return
+		}
+		
 		service.breedsRequest(requestHeader: request) { [weak self] response in
 			guard let self = self else { return }
 			switch response {
-			case .success(let listOfDogs):
-				self.displayScreen(with: listOfDogs)
+			case .success(let paginationItem):
+				self.retrieve(data: paginationItem)
 			case .failure:
 				()
 			}
@@ -55,11 +55,23 @@ final class DogsListViewModel: DogsListViewModelProtocol {
 	}
 	
 	func getListByOrder(isAscending: Bool) {
+		numberOFItems = nil
+		currentPage = .zero
+		self.isAscending = isAscending
+		dogs = []
 		
+		getNextPage()
 	}
 	
-	private func displayScreen(with responseList: [AnimalItemResponse]) {
-		let presentationArray = responseList.map { item -> DogCollectionViewCell.Model? in
+	private func retrieve(data: PaginationItem) {
+		numberOFItems = data.numberOfItems
+		currentPage += 1
+		displayScreen(with: data.dogList)
+	}
+	
+	private func displayScreen(with responseList: [DogItemResponse]) {
+		dogs.append(contentsOf: responseList)
+		let presentationArray = dogs.map { item -> DogCollectionViewCell.Model? in
 			if let name = item.name {
 				return DogCollectionViewCell.Model(name: name,
 												   urlImage: item.image?.url)

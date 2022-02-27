@@ -69,22 +69,22 @@ extension DogListView: ViewCodeConfiguration {
 	func setupContraints() {
 		let layoutAndFilterViewConstraints = [
 			layoutAndFilterView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-			layoutAndFilterView.leadingAnchor.constraint(equalTo: leadingAnchor),
-			layoutAndFilterView.trailingAnchor.constraint(equalTo: trailingAnchor),
+			layoutAndFilterView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+			layoutAndFilterView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
 			layoutAndFilterView.heightAnchor.constraint(equalToConstant: 36)
 		]
 		
 		let myCollectionViewConstraints = [
 			myCollectionView.topAnchor.constraint(equalTo: layoutAndFilterView.bottomAnchor),
-			myCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-			myCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-			myCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+			myCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8),
+			myCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8),
+			myCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
 		]
 		
 		NSLayoutConstraint.activate(layoutAndFilterViewConstraints + myCollectionViewConstraints)
 	}
 	
 	func configureViews() {
-		
+		backgroundColor = .white
 	}
 }

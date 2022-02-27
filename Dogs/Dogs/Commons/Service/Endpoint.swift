@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Endpoint {
 	enum Path: String {
 		case breeds = "/v1/breeds"

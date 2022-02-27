@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 protocol LayoutAndFilterViewDelegate: AnyObject {
 	
 	func layoutAndFilterView(_ view: LayoutAndFilterView, orderIsSelected: LayoutAndFilterView.Alphabetic)
@@ -19,7 +18,6 @@ final class LayoutAndFilterView: UIView {
 	enum Alphabetic {
 		case ascending
 		case descending
-		case none
 	}
 	
 	enum LayoutFormat {
@@ -27,14 +25,14 @@ final class LayoutAndFilterView: UIView {
 		case grid
 	}
 	
-	private(set) var alphabeticState: Alphabetic = .none {
+	private(set) var alphabeticState: Alphabetic = .ascending {
 		didSet {
 			delegate?.layoutAndFilterView(self,
 										  orderIsSelected: alphabeticState)
 		}
 	}
 	
-	private(set) var layoutFormat: LayoutFormat = .grid {
+	private(set) var layoutFormat: LayoutFormat = .list {
 		didSet {
 			delegate?.layoutAndFilterView(self,
 										  layoutIsSelected: layoutFormat)
@@ -61,8 +59,6 @@ final class LayoutAndFilterView: UIView {
 		case .ascending:
 			alphabeticState = .descending
 		case .descending:
-			alphabeticState = .ascending
-		case .none:
 			alphabeticState = .ascending
 		}
 	}

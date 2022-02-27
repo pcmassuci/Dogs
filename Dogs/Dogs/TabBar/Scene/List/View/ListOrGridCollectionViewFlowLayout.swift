@@ -10,20 +10,17 @@ import UIKit
 final class ListOrGridCollectionViewFlowLayout: UICollectionViewFlowLayout {
 	
 	func selectListLayout(width: CGFloat) {
-		sectionInset = UIEdgeInsets(top: .zero,
-									left: 10,
-									bottom: .zero,
-									right: 10)
-		
 		itemSize.width = width
-				minimumInteritemSpacing = .zero
-				minimumLineSpacing = .zero
-				scrollDirection = .vertical
+		itemSize.height = 100
+		minimumInteritemSpacing = .zero
+		minimumLineSpacing = 4
+		scrollDirection = .vertical
 	}
 	
 	func selectGridLayout(width: CGFloat) {
 		scrollDirection = .vertical
 		itemSize.width = (width/2 - 20)
+		itemSize.height = 120
 		minimumInteritemSpacing = 10
 		minimumLineSpacing = 10
 	}

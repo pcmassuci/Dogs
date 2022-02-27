@@ -23,7 +23,6 @@ extension UIView {
 		NSLayoutConstraint.activate(constraints)
 	}
 	
-	/// Set is view is codable
 	func setViewIsCodable() {
 		translatesAutoresizingMaskIntoConstraints = false
 	}

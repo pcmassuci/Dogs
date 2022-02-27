@@ -20,6 +20,7 @@ final class DogListViewController: UIViewController {
 	}
 	
 	var viewModel: DogsListViewModelProtocol?
+	weak var coordinator: DogsListCoodinatorProtocol?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -50,21 +51,28 @@ extension DogListViewController: UICollectionViewDataSource {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		//		if dataSource.isEmpty || dataSource.count <= indexPath.item {
-		//			return UICollectionViewCell()
-		//		}
+				if dataSource.isEmpty || dataSource.count <= indexPath.item {
+					return UICollectionViewCell()
+				}
 		
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DogCollectionViewCell.identifier,
 													  for: indexPath) as? DogCollectionViewCell
 		
 		cell?.model = dataSource[indexPath.row]
+		cell?.sizeToFit()
 		return cell!
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+		if (viewModel?.hasNextPage ?? false) , indexPath.item == (dataSource.count - 1) {
+			viewModel?.getNextPage()
+		}
 	}
 }
 
 extension DogListViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		
+		coordinator?.didPresentDetailsView()
 	}
 }
 
@@ -76,7 +84,7 @@ extension DogListViewController: DogsListViewModelDelegate {
 
 extension DogListViewController: LayoutAndFilterViewDelegate {
 	func layoutAndFilterView(_ view: LayoutAndFilterView, orderIsSelected: LayoutAndFilterView.Alphabetic) {
-
+		viewModel?.getListByOrder(isAscending: orderIsSelected == .ascending)
 	}
 	
 	func layoutAndFilterView(_ view: LayoutAndFilterView, layoutIsSelected: LayoutAndFilterView.LayoutFormat) {

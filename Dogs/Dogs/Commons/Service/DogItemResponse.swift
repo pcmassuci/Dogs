@@ -5,7 +5,7 @@
 //  Created by Paulo Cesar Morandi Massuci on 26/02/22.
 //
 
-struct AnimalItemResponse: Decodable {
+struct DogItemResponse: Decodable {
 	enum CodingKeys: String, CodingKey {
 		case idDog = "id"
 		case name
@@ -33,7 +33,20 @@ struct AnimalItemResponse: Decodable {
 	let image: Image?
 }
 
-extension AnimalItemResponse {
+extension DogItemResponse {
+	struct Image: Decodable {
+		enum CodingKeys: String, CodingKey {
+			case idImage = "id"
+			case width
+			case height
+			case url
+		}
+		
+		let idImage: String?
+		let width: Int
+		let height: Int
+		let url: String?
+	}
 	struct Weight: Decodable {
 		var imperial: String?
 		var metric: String?
@@ -42,19 +55,6 @@ extension AnimalItemResponse {
 	struct Height: Decodable {
 		var imperial: String?
 		var metric: String?
-	}
-	
-	struct Image: Decodable {
-		enum CodingKeys: String, CodingKey {
-			case idImage = "id"
-			case width
-			case height
-			case url
-		}
-		let idImage: String?
-		let width: Int
-		let height: Int
-		let url: String?
 	}
 }
 
