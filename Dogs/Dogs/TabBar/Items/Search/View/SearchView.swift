@@ -13,7 +13,6 @@ final class SearchView: UIView {
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		
 		applyViewCode()
 	}
 	
@@ -61,9 +60,8 @@ extension SearchView: ViewCodeConfiguration {
 	}
 	
 	func configureViews() {
+		backgroundColor = .white
 		tableView.register(SearchViewCell.self,
 						   forCellReuseIdentifier: SearchViewCell.identifier)
-		let tap = UITapGestureRecognizer(target: self, action: #selector(searchBar.endEditing))
-		self.addGestureRecognizer(tap)
 	}
 }

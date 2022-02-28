@@ -8,7 +8,7 @@
 import UIKit
 
 protocol DogsListCoodinatorProtocol: AnyObject {
-	func didPresentDetailsView()
+	func didPresentDetailsView(_ item: DogItemResponse)
 }
 
 final class DogsListCoodinator: Coordinator {
@@ -38,11 +38,9 @@ final class DogsListCoodinator: Coordinator {
 }
 
 extension DogsListCoodinator: DogsListCoodinatorProtocol {
-	func didPresentDetailsView() {
-		let viewController = UIViewController()
-		viewController.view.backgroundColor = .green
-		navigationController.navigationBar.isHidden = false
-		navigationController.pushViewController(viewController,
-												animated: true)
+	func didPresentDetailsView(_ item: DogItemResponse) {
+		let coordinator = DetailViewCoodinator(navigationController)
+		childCoordinators.append(coordinator)
+		coordinator.start(dogItem: item)
 	}
 }

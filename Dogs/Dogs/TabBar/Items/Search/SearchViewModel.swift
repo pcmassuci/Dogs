@@ -13,10 +13,12 @@ protocol SearchViewModelDelegate: AnyObject {
 
 protocol SearchViewModelProtocol {
 	func searchDogsBy(breed: String)
+	
+	func getItem(_ index: Int) -> DogItemResponse? 
 }
 
 final class SearchViewModel: SearchViewModelProtocol {
-	
+	private var dogs: [DogItemResponse] = []
 	weak var delegate: SearchViewModelDelegate?
 	private let service: SearchService
 	
@@ -38,7 +40,7 @@ final class SearchViewModel: SearchViewModelProtocol {
 	}
 	
 	private func displayScreen(with responseList: [DogItemResponse]) {
-		print(responseList.count)
+		dogs = responseList
 		let presentationArray = responseList.map { item -> SearchViewCell.Model? in
 			if let name = item.name {
 				return SearchViewCell.Model(breedName: name,
@@ -53,5 +55,10 @@ final class SearchViewModel: SearchViewModelProtocol {
 			self.delegate?.searchViewModel(self,
 										   didUpdate: presentationArray.compactMap { $0 })  
 		}
+	}
+	
+	func getItem(_ index: Int) -> DogItemResponse? {
+		guard dogs.count > index else { return nil }
+			return dogs[index]
 	}
 }

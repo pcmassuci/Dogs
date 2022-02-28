@@ -11,6 +11,7 @@ protocol DogsListViewModelProtocol {
 	var hasNextPage: Bool { get }
 	func getNextPage()
 	func getListByOrder(isAscending: Bool)
+	func getItem(_ index: Int) -> DogItemResponse?
 }
 
 protocol DogsListViewModelDelegate: AnyObject {
@@ -61,6 +62,11 @@ final class DogsListViewModel: DogsListViewModelProtocol {
 		dogs = []
 		
 		getNextPage()
+	}
+	
+	func getItem(_ index: Int) -> DogItemResponse? {
+		guard dogs.count > index else { return nil }
+			return dogs[index]
 	}
 	
 	private func retrieve(data: PaginationItem) {

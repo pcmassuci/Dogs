@@ -34,7 +34,6 @@ class TabCoordinator: NSObject, Coordinator {
     }
 
     func start() {
-        // Let's define which pages do we want to add into tab bar
         let pages: [TabBarPage] = [
             .dogs,
             .search]
@@ -55,6 +54,7 @@ class TabCoordinator: NSObject, Coordinator {
 
         tabBarController.selectedIndex = TabBarPage.dogs.pageOrderNumber()
         tabBarController.tabBar.isTranslucent = false
+		tabBarController.tabBar.backgroundColor = .white
         navigationController.viewControllers = [tabBarController]
     }
 

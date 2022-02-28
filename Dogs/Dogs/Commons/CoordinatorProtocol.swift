@@ -40,5 +40,5 @@ protocol CoordinatorFinishDelegate: AnyObject {
 // MARK: - CoordinatorType
 
 enum CoordinatorType {
-    case tab, list
+    case tab, list, search, detail
 }
