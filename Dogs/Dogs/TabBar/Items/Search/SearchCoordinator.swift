@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol SearchCoodinatorProtocol: AnyObject {
 	func didPresentDetailsView(_ item: DogItemResponse)
 }
@@ -25,7 +26,7 @@ final class SearchCoordinator: Coordinator {
 		searchListViewController.viewModel = viewModel
 		searchListViewController.coordinator = self
 		navigationController.pushViewController(searchListViewController,
-												animated: true)
+										 animated: true)
 	}
 	
 	required init(_ navigationController: UINavigationController) {
