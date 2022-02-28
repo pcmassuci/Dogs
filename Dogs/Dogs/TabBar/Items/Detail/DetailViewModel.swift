@@ -26,7 +26,9 @@ final class DetailViewModel: DetailViewModelProtocol {
 	
 	func getViewData() {
 		let defaultString = "Not Availiable"
-		let model = DetailView.Model(breedName: item.name ?? defaultString,
+
+		let model = DetailView.Model(urlImage: item.image?.url,
+									 breedName: item.name ?? defaultString,
 									 breedCategory: item.breedGroup
 									 ?? defaultString,
 									 origin: item.origin ?? defaultString,
