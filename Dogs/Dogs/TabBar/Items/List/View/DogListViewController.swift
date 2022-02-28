@@ -27,7 +27,7 @@ final class DogListViewController: UIViewController {
 		listView?.setCollectionView(dataSource: self,
 									delegate: self)
 		listView?.layoutAndFilterView(delegate: self)
-		self.navigationController?.navigationBar.isHidden = true
+		title = "Dog List"
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +73,8 @@ extension DogListViewController: UICollectionViewDataSource {
 
 extension DogListViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		coordinator?.didPresentDetailsView()
+		guard let item = viewModel?.getItem(indexPath.item) else { return }
+		coordinator?.didPresentDetailsView(item)
 	}
 }
 

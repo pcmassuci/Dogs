@@ -19,10 +19,11 @@ final class SearchViewController: UIViewController {
 	}
 	
 	var viewModel: SearchViewModelProtocol?
-	weak var coordinator: DogsListCoodinatorProtocol?
+	weak var coordinator: SearchCoodinatorProtocol?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		title = "Search"
 		searchView?.setupSearchBar(delegate: self)
 		searchView?.setupTableView(dataSource: self,
 								   delegate: self)
@@ -48,7 +49,10 @@ extension SearchViewController: UITableViewDataSource {
 }
 
 extension SearchViewController: UITableViewDelegate {
-	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard let item = viewModel?.getItem(indexPath.row) else { return }
+		coordinator?.didPresentDetailsView(item)
+	}
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -56,6 +60,19 @@ extension SearchViewController: UISearchBarDelegate {
 		guard let text = searchBar.text else { return }
 		viewModel?.searchDogsBy(breed: text)
 		searchBar.endEditing(true)
+	}
+	
+	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+		searchBar.text = String()
+		searchBar.endEditing(true)
+	}
+	
+	func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+		searchBar.setShowsCancelButton(true, animated: true)
+	}
+
+	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+		searchBar.setShowsCancelButton(false, animated: true)
 	}
 }
 

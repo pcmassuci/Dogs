@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SearchCoodinatorProtocol: AnyObject {
+	func didPresentDetailsView(_ item: DogItemResponse)
+}
+
 final class SearchCoordinator: Coordinator {
 	var finishDelegate: CoordinatorFinishDelegate?
 	
@@ -33,12 +37,10 @@ final class SearchCoordinator: Coordinator {
 	}
 }
 
-extension SearchCoordinator: DogsListCoodinatorProtocol {
-	func didPresentDetailsView() {
-		let viewController = UIViewController()
-		viewController.view.backgroundColor = .green
-		navigationController.navigationBar.isHidden = false
-		navigationController.pushViewController(viewController,
-												animated: true)
+extension SearchCoordinator: SearchCoodinatorProtocol {
+	func didPresentDetailsView(_ item: DogItemResponse) {
+		let coordinator = DetailViewCoodinator(navigationController)
+		childCoordinators.append(coordinator)
+		coordinator.start(dogItem: item)
 	}
 }
