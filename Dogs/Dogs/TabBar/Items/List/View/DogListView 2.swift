@@ -71,7 +71,7 @@ extension DogListView: ViewCodeConfiguration {
 			layoutAndFilterView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
 			layoutAndFilterView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
 			layoutAndFilterView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-			layoutAndFilterView.heightAnchor.constraint(equalToConstant: 56)
+			layoutAndFilterView.heightAnchor.constraint(equalToConstant: 36)
 		]
 		
 		let myCollectionViewConstraints = [

@@ -27,15 +27,20 @@ final class LayoutAndFilterView: UIView {
 	
 	private(set) var alphabeticState: Alphabetic = .ascending {
 		didSet {
+			alphabeticButton.setImage(alphabeticState.getImage(),
+								  for: .normal)
+
 			delegate?.layoutAndFilterView(self,
 										  orderIsSelected: alphabeticState)
 		}
 	}
 	
-	private(set) var layoutFormat: LayoutFormat = .list {
+	private(set) var layoutFormatState: LayoutFormat = .list {
 		didSet {
+			layoutButton.setImage(layoutFormatState.getImage(),
+								  for: .normal)
 			delegate?.layoutAndFilterView(self,
-										  layoutIsSelected: layoutFormat)
+										  layoutIsSelected: layoutFormatState)
 		}
 	}
 	
@@ -65,11 +70,11 @@ final class LayoutAndFilterView: UIView {
 	
 	@objc
 	private func layoutButtonSelected() {
-		switch layoutFormat {
+		switch layoutFormatState {
 		case .list:
-			layoutFormat = .grid
+			layoutFormatState = .grid
 		case .grid:
-			layoutFormat = .list
+			layoutFormatState = .list
 		}
 	}
 }
@@ -90,8 +95,8 @@ extension LayoutAndFilterView: ViewCodeConfiguration {
 			alphabeticButton.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor,
 													 constant: -8),
 			alphabeticButton.leadingAnchor.constraint(equalTo: leadingAnchor,
-													  constant: 8),
-			alphabeticButton.heightAnchor.constraint(equalToConstant: 20)
+													  constant: 20),
+			alphabeticButton.heightAnchor.constraint(equalToConstant: 40)
 		]
 		
 		let layoutButtonConstraints = [
@@ -102,23 +107,47 @@ extension LayoutAndFilterView: ViewCodeConfiguration {
 			layoutButton.leadingAnchor.constraint(greaterThanOrEqualTo: alphabeticButton.trailingAnchor,
 												  constant: 8),
 			layoutButton.trailingAnchor.constraint(equalTo: trailingAnchor,
-												   constant: -8),
-			layoutButton.heightAnchor.constraint(equalToConstant: 20)
+												   constant: -20),
+			layoutButton.heightAnchor.constraint(equalToConstant: 40)
 		]
 		
 		NSLayoutConstraint.activate(alphabeticButtonConstraints + layoutButtonConstraints)
 	}
 	
 	func configureViews() {
-		backgroundColor = .systemPink
-		layoutButton.setTitle("L", for: .normal)
-	
+		backgroundColor = .white
+		layoutButton.setImage(layoutFormatState.getImage(),
+							  for: .normal)
+		
 		layoutButton.addTarget(self,
 							   action: #selector(layoutButtonSelected),
 							   for: .touchUpInside)
-		alphabeticButton.setTitle("A", for: .normal)
+		alphabeticButton.setImage(alphabeticState.getImage(),
+								  for: .normal)
 		alphabeticButton.addTarget(self,
-							   action: #selector(alphabeticButtonSelected),
-							   for: .touchUpInside)
+								   action: #selector(alphabeticButtonSelected),
+								   for: .touchUpInside)
+	}
+}
+
+extension LayoutAndFilterView.Alphabetic {
+	func getImage() -> UIImage? {
+		switch self {
+		case .ascending:
+			return UIImage(named: "alpha_desc")
+		case .descending:
+			return UIImage(named: "alpha_asc")
+		}
+	}
+}
+
+extension LayoutAndFilterView.LayoutFormat {
+	func getImage() -> UIImage? {
+		switch self {
+		case .list:
+			return UIImage(named: "grid")
+		case .grid:
+			return UIImage(named: "list")
+		}
 	}
 }

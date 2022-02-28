@@ -89,7 +89,7 @@ extension DogCollectionViewCell: ViewCodeConfiguration {
 	
 	func configureViews() {
 		breedLabel.numberOfLines = .zero
-		breedLabel.font = .systemFont(ofSize: 20)
 		breedImage.contentMode = .scaleAspectFit
+		breedImage.clipsToBounds = true
 	}
 }
