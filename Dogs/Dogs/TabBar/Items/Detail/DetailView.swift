@@ -51,9 +51,8 @@ final class DetailView: UIView {
 	private func didSetModel() {
 		if let urlPhoto = URL(string: model?.urlImage ?? String()) {
 			imageView.kf.setImage(with: urlPhoto)
-			}
 		}
-
+		
 		breedNameValueLabel.text = model?.breedName
 		breedCategoryValueLabel.text = model?.breedCategory
 		originValueLabel.text = model?.origin
@@ -185,12 +184,12 @@ extension DetailView: ViewCodeConfiguration {
 		backgroundColor = .white
 		
 		imageView.contentMode = .scaleAspectFit
-
+		
 		breedNameLabel.text = "Breed:"
 		breedNameLabel.textAlignment = .left
 		breedNameLabel.font = .systemFont(ofSize: 24)
 		breedNameLabel.numberOfLines = .zero
-
+		
 		breedNameValueLabel.font = .systemFont(ofSize: 16)
 		breedNameValueLabel.textAlignment = .right
 		breedNameValueLabel.numberOfLines = .zero
@@ -203,7 +202,7 @@ extension DetailView: ViewCodeConfiguration {
 		breedCategoryValueLabel.textAlignment = .right
 		breedCategoryValueLabel.font = .systemFont(ofSize: 16)
 		breedCategoryValueLabel.numberOfLines = .zero
-
+		
 		originLabel.text = "Origin:"
 		originLabel.textAlignment = .left
 		originLabel.font = .systemFont(ofSize: 24)
@@ -212,12 +211,12 @@ extension DetailView: ViewCodeConfiguration {
 		originValueLabel.font = .systemFont(ofSize: 16)
 		originValueLabel.textAlignment = .right
 		originValueLabel.numberOfLines = .zero
-
+		
 		temperamentLabel.text = "Temperament:"
 		temperamentLabel.font = .systemFont(ofSize: 24)
 		temperamentLabel.textAlignment = .left
 		temperamentLabel.numberOfLines = .zero
-
+		
 		temperamentValueLabel.font = .systemFont(ofSize: 16)
 		temperamentValueLabel.textAlignment = .right
 		temperamentValueLabel.numberOfLines = .zero
